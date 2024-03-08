@@ -1,0 +1,29 @@
+users_number = int(input())
+back, chest, legs, abs, protein_shake, protein_bar = 0, 0, 0, 0, 0, 0
+
+for _ in range(users_number):
+    activity = input()
+    if activity == 'Back':
+        back += 1
+    elif activity == 'Chest':
+        chest += 1
+    elif activity == 'Legs':
+        legs += 1
+    elif activity == 'Abs':
+        abs += 1
+    elif activity == 'Protein shake':
+        protein_shake += 1
+    elif activity == 'Protein bar':
+        protein_bar += 1
+
+working_out = (legs + chest + back + abs) / users_number * 100
+shopping = (protein_bar + protein_shake) / users_number * 100
+
+print(f'{back} - back')
+print(f'{chest} - chest')
+print(f'{legs} - legs')
+print(f'{abs} - abs')
+print(f'{protein_shake} - protein shake')
+print(f'{protein_bar} - protein bar')
+print(f'{working_out:.2f}% - work out')
+print(f'{shopping:.2f}% - protein')
