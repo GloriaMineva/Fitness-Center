@@ -1,0 +1,35 @@
+stage, ticket_type = input(), input()
+qty = int(input())
+photo = input()
+sum = 0
+if stage == 'Quarter final' and ticket_type == 'Standard':
+    sum = qty * 55.5
+elif stage == 'Quarter final' and ticket_type == 'Premium':
+    sum = qty * 105.2
+elif stage == 'Quarter final' and ticket_type == 'VIP':
+    sum = qty * 118.9
+elif stage == 'Semi final' and ticket_type == 'Standard':
+    sum = qty * 75.88
+elif stage == 'Semi final' and ticket_type == 'Premium':
+    sum = qty * 125.22
+elif stage == 'Semi final' and ticket_type == 'VIP':
+    sum = qty * 300.4
+elif stage == 'Final' and ticket_type == 'Standard':
+    sum = qty * 110.10
+elif stage == 'Final' and ticket_type == 'Premium':
+    sum = qty * 160.66
+elif stage == 'Final' and ticket_type == 'VIP':
+    sum = qty * 400
+
+if sum > 4000:
+    sum *= 0.75
+elif sum > 2500:
+    sum *= 0.9
+    if photo == 'Y':
+        sum += 40 * qty
+elif sum <= 2500 and photo == 'Y':
+    sum += 40 * qty
+
+print(f'{sum:.2f}')
+
+
