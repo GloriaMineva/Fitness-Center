@@ -1,0 +1,31 @@
+leva = float(input())
+money_in_st = int(leva * 100)
+coins = 0
+
+
+while money_in_st > 0:
+    if money_in_st >= 200:
+        coins += money_in_st // 200
+        money_in_st %= 200
+    elif money_in_st >= 100:
+        coins += money_in_st // 100
+        money_in_st %= 100
+    elif money_in_st >= 50:
+        coins += money_in_st // 50
+        money_in_st %= 50
+    elif money_in_st >= 20:
+        coins += money_in_st // 20
+        money_in_st %= 20
+    elif money_in_st >= 10:
+        coins += money_in_st // 10
+        money_in_st %= 10
+    elif money_in_st >= 5:
+        coins += money_in_st // 5
+        money_in_st %= 5
+    elif money_in_st >= 2:
+        coins += money_in_st // 2
+        money_in_st %= 2
+    elif money_in_st >= 1:
+        coins += money_in_st // 1
+        money_in_st %= 1
+print(coins)
