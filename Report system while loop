@@ -1,0 +1,31 @@
+needed_sum = int(input())
+collected_sum = 0
+payments_counter = 0 #1-cash 2-card
+cash_money = 0
+card_money = 0
+cash_payments = 0
+card_payments = 0
+
+while needed_sum > collected_sum:
+    price = input()
+    payments_counter += 1
+    if price == 'End':
+        print('Failed to collect required money for charity.')
+        break
+    price = int(price)
+    if payments_counter % 2 != 0 and price <= 100:
+        collected_sum += price
+        cash_money += price
+        cash_payments += 1
+        print('Product sold!')
+    elif payments_counter % 2 == 0 and price >= 10:
+        collected_sum += price
+        card_money += price
+        card_payments += 1
+        print('Product sold!')
+    else:
+        print('Error in transaction!')
+else:
+    print(f'Average CS: {cash_money / cash_payments:.2f}')
+    print(f'Average CC: {card_money / card_payments:.2f}')
+
