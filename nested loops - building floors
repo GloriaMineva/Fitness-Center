@@ -1,0 +1,10 @@
+floors_num, rooms_num = int(input()), int(input())
+for current_floor in range(floors_num, 0, -1):
+    for app in range(rooms_num):
+        if current_floor == floors_num:
+            print(f'L{current_floor}{app}', end=' ')
+        elif current_floor % 2 == 0:
+            print(f'O{current_floor}{app}', end=' ')
+        else:
+            print(f'A{current_floor}{app}', end=' ')
+    print()
