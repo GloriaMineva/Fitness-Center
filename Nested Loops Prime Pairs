@@ -1,0 +1,12 @@
+first_num_start, secund_num_start = int(input()), int(input())
+end_fisrt_num, end_second_num = int(input()), int(input())
+prime_pair = ''
+for i in range(first_num_start, first_num_start + end_fisrt_num + 1):
+    for j in range(secund_num_start, secund_num_start + end_second_num + 1):
+        if i % 2 != 0 and j % 2 != 0:
+            if i % 3 != 0 and j % 3 != 0:
+                if i % 5 != 0 and j % 5 != 0:
+                    if i % 7 != 0 and j % 7 != 0:
+                        if i % 9 != 0 and j % 9 != 0:
+                            prime_pair = str(i) + str(j)
+                            print(prime_pair)
