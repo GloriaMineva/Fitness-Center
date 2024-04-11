@@ -1,0 +1,24 @@
+counter = 0
+points_list = []
+titles_list = []
+while counter < 7:
+    movie = input()
+    if movie == 'STOP':
+        print(f'The best movie for you is {winner_title} with {winner_points} ASCII sum.')
+        break
+    counter += 1
+    current_points = 0
+    for i in movie:
+        current_points += ord(i)
+        if 65 <= ord(i) <= 90:
+            current_points -= len(movie)
+        elif 97 <= ord(i) <= 122:
+            current_points -= len(movie) * 2
+    points_list.append(current_points)
+    titles_list.append(movie)
+    winner_points = max(points_list)
+    index_winner = points_list.index(max(points_list))
+    winner_title = titles_list[index_winner]
+else:
+    print('The limit is reached.')
+    print(f'The best movie for you is {winner_title} with {winner_points} ASCII sum.')
