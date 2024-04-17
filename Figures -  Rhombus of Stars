@@ -1,0 +1,14 @@
+n = int(input())
+
+for i in range(n):
+    if i > 0:
+        print()
+    print(f'{" " * (n - i - 1)}* ', end='')
+    for j in range(i):
+        print('* ', end='')
+for k in reversed(range(n - 1)):
+    if k < n:
+        print()
+    print(f'{" " * (n - k - 1)}* ', end='')
+    for l in range(k):
+        print('* ', end='')
